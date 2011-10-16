@@ -85,9 +85,6 @@ void QHttpConnection::parseRequest()
     }
 }
 
-QObject *QHttpConnection::getRequest() { return m_request; }
-QObject *QHttpConnection::getResponse() { return m_response; }
-
 void QHttpConnection::write(const QByteArray &data)
 {
     m_socket->write(data);
@@ -153,9 +150,6 @@ int QHttpConnection::HeadersComplete(http_parser *parser)
         response->m_keepAlive = false;
 
     connect(response, SIGNAL(done()), theConnection, SLOT(responseDone()));
-
-    // NOTE: Not sure whether this is ok, it's a workaround to pass request and response object in phantomjs
-    theConnection->m_response = response;
 
     // we are good to go!
     emit theConnection->newRequest(theConnection->m_request, response);

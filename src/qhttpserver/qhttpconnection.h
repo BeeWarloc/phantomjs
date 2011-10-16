@@ -40,9 +40,6 @@ class QHttpConnection : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QObject *request    READ getRequest);
-    Q_PROPERTY(QObject *response   READ getResponse);
-
 public:
     QHttpConnection(QTcpSocket *socket, QObject *parent = 0);
     virtual ~QHttpConnection();
@@ -79,7 +76,6 @@ private:
 
     // since there can only be one request at any time
     // even with pipelining
-    QHttpResponse *m_response;
     QHttpRequest *m_request;
 
     // the ones we are reading in from the parser

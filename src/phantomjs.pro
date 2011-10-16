@@ -33,6 +33,24 @@ SOURCES += phantom.cpp \
     encoding.cpp \
     config.cpp
 
+SOURCES += http-parser/http_parser.c
+
+HEADERS += http-parser/http_parser.h
+
+INCLUDEPATH += http-parser
+
+SOURCES += qhttpserver/qhttpconnection.cpp \
+    qhttpserver/qhttprequest.cpp \
+    qhttpserver/qhttpresponse.cpp \
+    qhttpserver/qhttpserver.cpp
+
+HEADERS += qhttpserver/qhttpconnection.h \
+    qhttpserver/qhttprequest.h \
+    qhttpserver/qhttpresponse.h \
+    qhttpserver/qhttpserver.h
+
+INCLUDEPATH += qhttpserver
+
 OTHER_FILES += usage.txt \
     bootstrap.js \
     configurator.js \
