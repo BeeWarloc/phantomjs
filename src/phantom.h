@@ -70,6 +70,7 @@ public:
     QVariantMap version() const;
 
 public slots:
+    QObject *createHttpServer();
     QObject *createWebPage();
     QObject *createFilesystem();
     QString loadModuleSource(const QString &name);

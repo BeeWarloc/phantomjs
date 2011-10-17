@@ -36,6 +36,8 @@
 #include <QFileInfo>
 #include <QFile>
 
+#include <qhttpserver.h>
+
 #include "consts.h"
 #include "terminal.h"
 #include "utils.h"
@@ -177,6 +179,12 @@ QVariantMap Phantom::version() const
 }
 
 // public slots:
+QObject *Phantom::createHttpServer()
+{
+   QHttpServer *httpServer = new QHttpServer;
+   return httpServer;
+}
+
 QObject *Phantom::createWebPage()
 {
     WebPage *page = new WebPage(this, &m_config);
