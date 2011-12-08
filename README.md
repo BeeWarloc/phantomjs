@@ -31,3 +31,6 @@ PhantomJS is based on [Qt](http://qt.nokia.com). There are two implementations, 
 The latest [stable release](http://code.google.com/p/phantomjs/wiki/ReleaseNotes) is version 1.3 ("Water Lily").
 
 If you want to contribute, please read the [Contribution Guide](http://code.google.com/p/phantomjs/wiki/ContributionGuide).
+
+NOTE: This branch contains a VERY incomplete version of a webdriver implementation for phantom.js. A lot of work remains for it to be useful for anything!
+

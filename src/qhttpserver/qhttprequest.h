@@ -146,6 +146,8 @@ signals:
      */
     void data(const QByteArray &);
 
+    void dataEncoded(const QString &);
+
     /*!
      * Emitted at the end of the HTTP request.
      * No data() signals will be emitted after this.

@@ -241,6 +241,9 @@ int QHttpConnection::Body(http_parser *parser, const char *at, size_t length)
     QHttpConnection *theConnection = (QHttpConnection *)parser->data;
     Q_ASSERT(theConnection->m_request);
 
+    QString dataText = QString::fromUtf8(at, length);
+
+    emit theConnection->m_request->dataEncoded(dataText);
     emit theConnection->m_request->data(QByteArray(at, length));
     return 0;
 }
